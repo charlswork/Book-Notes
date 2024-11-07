@@ -1,0 +1,617 @@
+body {
+  background-color: #f3f4f6; /* Soft background color for contrast */
+
+}
+
+
+/* =====================footer styling =========================== */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0; /* Ensure it starts from the left edge */
+  width: 100%; /* Full width */
+  background-color: #2d2d2d;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+.summary{
+text-align: justify;
+}
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: #6cb2eb;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 0.3rem;
+}
+
+.footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+/* ===========================for css book.ejs===================== */ /* Container for the book list */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.h2-style {
+  font-family: "Cinzel", serif; /* or 'Merriweather' or 'Caveat' */
+ 
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title-firstPage {
+  font-family: "Cinzel", serif; /* or 'Merriweather' or 'Caveat' */
+  font-size: 50px;
+}
+a {
+  text-decoration: underline; /* Keep the underline by default */
+  color: inherit; /* Inherit the text color */
+  transition: text-decoration-color 0.3s ease, color 0.3s ease; /* Smooth transition for color and underline */
+}
+
+a:hover {
+  text-decoration-color: #1e40af; /* Change the underline color on hover */
+  color: #1e40af; /* Change the text color on hover */
+  font-weight: bold; /* Optionally make the text bold on hover */
+}
+
+.summary {
+  font-family: "Cinzel", serif; /* or 'Merriweather' or 'Caveat' */
+  margin-bottom: 20px; /* Space below the paragraph */
+  border-bottom: 2px solid #cccccc; /* Light gray line as the separator */
+  padding-bottom: 10px; /* Space between text and the line */
+}
+
+
+/* Book card styling */
+.book {
+  background-color: #ffffff; /* White background for the book card */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 12px; /* Rounded corners */
+  padding: 20px;
+  width: 180px; /* Adjust the width of each card */
+  margin: 0 auto; /* Centers each book card within the grid */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* For positioning the background image */
+  overflow: hidden; /* Ensures the background image doesn't overflow the card */
+  height: auto; /* Let the card height adjust based on content */
+  background-size: cover; /* Ensures the background image covers the area */
+  background-position: center; /* Centers the background image */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Book card hover effect */
+.book:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Book cover styling */
+.book-cover {
+  width: 100%; /* Make sure the cover takes full width of the card */
+  height: 300px; /* Fixed height for all images */
+  object-fit: cover; /* Ensures images cover the area without stretching */
+  border-radius: 8px; /* Rounded corners for the cover */
+  margin-bottom: 15px;
+  z-index: 2; /* Ensure the image stays above the background */
+}
+
+/* Book title and author styling */
+.book h2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.book h3 {
+  font-size: 0.9rem;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+/* Status styling */
+.book p {
+  font-size: 0.9rem;
+  color: #777777;
+  margin-top: 8px;
+  font-style: italic;
+  z-index: 3; /* Ensure text content stays on top */
+}
+
+/* Responsive adjustments for grid */
+.books {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns on larger screens */
+  gap: 24px; /* Space between each book card */
+}
+
+
+@media (max-width: 1920px) {
+  .books {
+    grid-template-columns: repeat(5, 1fr); /* 3 columns on medium screens */
+  }
+  body{
+    padding: 2rem;
+  }
+ 
+}
+@media (max-width: 1024px) {
+  .books {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+  }
+ 
+}
+
+@media (max-width: 768px) {
+  .books {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+/* done */
+@media (max-width: 375px) {
+  .books {
+    grid-template-columns: 1fr; /* 1 column on mobile screens */
+  }
+  .title-firstPage{
+    font-size: 2rem;
+  }
+ .availableBooks{
+  font-size: 1rem;
+  }
+  a{
+    font-size: .8rem;
+  }
+  .header-style{
+    padding: 5px;
+    text-align: justify;
+  }
+  .h2-style{
+    padding: 1rem;
+  }
+}
+
+
+/* done */
+@media (max-width: 480px) {
+
+  .books {
+    grid-template-columns: 1fr; /* 1 column on mobile screens */
+  }
+  .title-firstPage{
+    font-size: 1.5rem;
+  }
+ .availableBooks{
+  font-size: .8rem;
+  }
+  a{
+    font-size: .6rem;
+  }
+  .header-style{
+    padding: 5px;
+    text-align: justify;
+  }
+  .h2-style{
+    padding: 1rem;
+  }
+  .summary{
+    font-size: .8rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================== CSS for Read Books Page ================== */
+
+/* Layout for the main book list */
+.book-list {
+  padding: 0 1rem;
+}
+
+.books-alt {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* Book container styling */
+.book-alt {
+  background-color: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out contents */
+}
+
+/* Book cover styling */
+.book-cover {
+  width: 100%;
+  max-width: 150px; /* Limit the cover width */
+  height: auto; /* Keep aspect ratio */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.book-cover-placeholder {
+  width: 100%;
+  max-width: 150px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  color: #555555;
+  font-style: italic;
+}
+.book-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+/* Book details styling */
+.book-details {
+  margin-top: 10px;
+}
+
+.book-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333333;
+}
+
+.book-author {
+  font-size: 0.9rem;
+  color: #555555;
+  margin-bottom: 8px;
+}
+
+.rating-text,
+.status-text {
+  font-size: 0.85rem;
+  color: #777777;
+  font-style: italic;
+}
+
+/* Mark as Unread button */
+.mark-unread-btn {
+  margin-top: auto;
+  padding: 6px 10px; /* Reduced padding */
+  font-size: 0.7rem; /* Adjusted font size */
+  background-color: #ff4b5c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  max-width: 120px; /* Limit button width */
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+.mark-unread-btn:hover {
+  background-color: #ff3f50;
+}
+
+/* Heading and navigation styles */
+.heading-readBooks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Cinzel", serif;
+  font-weight: 800;
+  padding: 0 1rem;
+}
+
+.nav-allBooks {
+  text-decoration: underline;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.nav-allBooks:hover {
+  color: #1e40af;
+  font-weight: bold;
+}
+
+.h1-readBooks {
+  font-size: 1.75rem;
+}
+
+/* Hover effect for book container */
+.book-alt:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .books-alt {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .books-alt {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .h1-readBooks {
+    font-size: 1.5rem;
+  }
+
+  .nav-allBooks {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+/* =====================book detail css ============= */
+/* Default desktop layout */
+.container-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0 15px; /* General padding for smaller screens */
+}
+
+.container-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .container-wrapper {
+    flex-direction: column; /* Stack cover and info vertically */
+    align-items: center;
+  }
+
+  .book-info {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 480px) {
+  .container-layout {
+    padding: 0 10px;
+  }
+
+  .h1-bookTitle {
+    font-size: 2rem;
+  }
+
+  .h3-bookAuthor {
+    font-size: 1.25rem;
+  }
+}
+.book-cover-container {
+  flex: 0 0 auto; /* Keep its size fixed until small screens */
+  text-align: center; /* Center align on smaller screens */
+}
+
+.book-cover {
+  width: 100%; /* Full width within its container */
+  max-width: 200px; /* Limit the max size */
+  height: auto;
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .book-cover {
+    max-width: 150px; /* Slightly reduce size */
+  }
+}
+
+.book-info {
+  max-width: 600px;
+  flex: 1;
+}
+
+.h1-bookTitle {
+  font-family: "Cinzel", serif;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.h3-bookAuthor {
+  font-family: "Cinzel", serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.book-metadata {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  color: #555;
+}
+
+.p-style {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+/* Ensure all content inside the review and note sections uses Cinzel font */
+.section-title {
+  font-family: "Cinzel", serif; /* Applies Cinzel font to the section titles */
+}
+
+.review-display,
+.note-display,
+textarea {
+  font-family: "Cinzel", serif; /* Applies Cinzel font to the review and note text */
+  font-size: 1rem; /* Optional: Adjust font size as needed */
+  color: #333; /* Optional: Adjust color if needed */
+}
+
+textarea {
+  font-size: 1rem; /* Ensure text inside textarea uses Cinzel font */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button {
+  font-family: "Cinzel", serif; /* Optional: If you'd like to ensure buttons also use the font */
+}
+/* Basic textarea styling */
+textarea {
+  font-family: "Cinzel", serif; /* Ensures the font stays consistent */
+  font-size: 1rem; /* Sets the font size */
+  padding: 10px 0; /* Padding for vertical space (top and bottom) */
+  border: none; /* Removes the default border */
+  background: transparent; /* Makes the background transparent */
+  outline: none; /* Removes the outline when clicked */
+  color: #333; /* Optional: Sets the text color */
+  width: 100%; /* Makes the textarea take up full width */
+  line-height: 1.5; /* Sets the line height to allow comfortable typing */
+  overflow: hidden; /* Hides any overflow content when text is short */
+  resize: none; /* Prevents resizing */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+}
+
+/* When the textarea is focused, we add a subtle border */
+textarea:focus {
+  border: 1px solid #1e40af; /* Blue border color on focus */
+  box-shadow: 0 0 5px rgba(30, 64, 175, 0.5); /* Light blue glow for focus */
+  background-color: #f9fafb; /* Slight background change on focus */
+}
+
+/* Optional: For button and other interactive elements */
+button {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  cursor: pointer; /* Makes it look clickable */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+/* Ensure the review and note sections behave responsively */
+/* Ensure review and note sections are styled properly and wrap content */
+.review-display, .note-display {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  color: #333;
+  max-width: 100%; /* Ensure content fits the container */
+  overflow-wrap: break-word; /* Break long words if necessary */
+  word-break: break-word; /* Ensure long text breaks instead of overflowing */
+  margin-bottom: 15px;
+  white-space: normal; /* Allow text to wrap */
+  line-height: 1.5; /* For better readability */
+}
+
+/* Add padding and borders to the review/note sections for aesthetics */
+.review-section, .note-section {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  width: 100%; /* Full width of the container */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+/* Ensure the content inside textarea is not cut off or hidden */
+textarea, .review-display, .note-display {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  color: #333;
+  width: 100%; /* Full width of the container */
+  box-sizing: border-box; /* Include padding in width */
+  overflow-wrap: break-word; /* Ensure long words break and wrap */
+  white-space: normal; /* Allow text wrapping */
+  line-height: 1.5;
+  padding: 10px;
+  border: 1px solid #ddd; /* Border for textarea */
+}
+
+/* Optional: Ensure textarea styling stays consistent */
+textarea {
+  resize: none; /* Prevent resizing */
+  outline: none; /* Remove outline on focus */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+}
+
+/* When focused, the textarea will show a subtle border */
+textarea:focus {
+  border: 1px solid #1e40af; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(30, 64, 175, 0.5); /* Light blue glow for focus */
+}

@@ -1,0 +1,42 @@
+<%- include("partials/header") -%>
+
+<div class="book-list">
+  <div class="heading-readBooks">
+    <a href="/allBooks" class="nav-allBooks">View All Books</a>
+    <h1 class="h1-readBooks">All Read Books</h1>
+  </div>
+
+  <div class="books-alt">
+    <% books.forEach(book => { %>
+      <div class="book-alt">
+        <% if (book.cover_url) { %>
+        <img
+          src="<%= book.cover_url %>"
+          alt="<%= book.title %> cover"
+          class="book-cover"
+        />
+        <% } else { %>
+        <div class="book-cover-placeholder">No cover available</div>
+        <% } %>
+      
+        <div class="book-content">
+          <div class="book-details">
+            <a href="/book/details/<%= book.id %>">
+              <h2 class="book-title"><%= book.title %></h2>
+            </a>
+            <h3 class="book-author">by <%= book.author %></h3>
+            <p class="rating-text">Rating: <%= book.rating %></p>
+            <p class="status-text">Status: Read</p>
+          </div>
+          
+          <form action="/book/<%= book.id %>/removeRead" method="POST">
+            <button type="submit" class="mark-unread-btn">Mark as Unread</button>
+          </form>
+        </div>
+      </div>
+      
+    <% }) %>
+  </div>
+</div>
+
+<%- include("partials/footer") -%>

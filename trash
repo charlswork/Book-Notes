@@ -1,0 +1,67 @@
+<!-- in a book.ejs got recycle -->
+<!-- <a href="/book/details/<%= book.id %>">
+  <div class="book-item">
+    <img src="<%= book.cover_url %>" alt="<%= book.title %>">
+    <h3><%= book.title %></h3>
+    <p><%= book.author %></p>
+  </div>
+</a> -->
+
+<!-- <div class="book-list">
+  <h1 class="text-2xl font-bold mb-6">All Books</h1>
+  <div class="books">
+    <% books.forEach(book => { %>
+      <div class="book">
+        <a href="/book/read/<%= book.id %>">
+          <% if (book.cover_url) { %>
+            <img src="<%= book.cover_url %>" alt="<%= book.title %> cover" class="book-cover">
+          <% } else { %>
+            <p>No cover available for this book.</p>
+          <% } %>
+        </a>
+        
+        <h2><%= book.title %></h2>
+        <h3><%= book.author %></h3>
+        <p>Status: <%= book.read ? "Read" : "Unread" %></p>
+      </div>
+    <% }) %>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- form bookdetail -->
+ <!-- 
+
+<script>
+  // Review Edit Button Toggle
+  document
+    .getElementById("edit-review-btn")
+    .addEventListener("click", function () {
+      document.getElementById("review-display").style.display = "none";
+      document.getElementById("review-edit-form").style.display = "block";
+      this.style.display = "none"; // Hide edit button while editing
+    });
+
+  // Note Edit Button Toggle
+  document
+    .getElementById("edit-note-btn")
+    .addEventListener("click", function () {
+      document.getElementById("note-display").style.display = "none";
+      document.getElementById("note-edit-form").style.display = "block";
+      this.style.display = "none"; // Hide edit button while editing
+    });
+</script> -->

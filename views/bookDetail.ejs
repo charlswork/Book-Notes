@@ -1,0 +1,56 @@
+<%- include("partials/header") -%>
+
+<div class="container-layout">
+  <!-- Book Details Section -->
+  <div class="container-wrapper">
+    <div class="book-cover-container">
+      <img src="<%= book.cover_url %>" alt="<%= book.title %> cover" class="book-cover" />
+    </div>
+
+    <div class="book-info">
+      
+      <h1 class="h1-bookTitle"><%= book.title %></h1>
+      <!-- <a href="/readBooks" class="view-read-books-link">View Read Books</a> -->
+
+      <h3 class="h3-bookAuthor">by <%= book.author %></h3>
+
+      <div class="book-metadata">
+        <p class="p-style"><strong>Rating:</strong> <%= book.rating %> / 5</p>
+        <p class="p-style"><strong>Created At:</strong> <%= new Date(book.created_at).toLocaleString() %></p>
+        <p class="p-style"><strong>Updated At:</strong> <%= new Date(book.updated_at).toLocaleString() %></p>
+        <p class="p-style"><strong>Read:</strong> <%= book.read ? 'Yes' : 'No' %></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review Section -->
+  <div class="review-section">
+    <h3 class="section-title">Review</h3>
+    <p id="review-display" class="review-display"><%= book.review %></p>
+    <button id="edit-review-btn">✏️ Edit Review</button>
+  
+    <form id="review-edit-form" action="/book/<%= book.id %>/updateReview" method="POST" style="display: none">
+      <textarea name="review" id="review-textarea"><%= book.review %></textarea>
+      <label for="rating">Rating</label>
+      <input type="number" name="rating" value="<%= book.rating %>" min="1" max="5" id="rating-input" />
+      <button type="submit">Save Review</button>
+    </form>
+  </div>
+  
+  <!-- Note Section -->
+  <div class="note-section">
+    <h3 class="section-title">Note</h3>
+    <p id="note-display" class="note-display"><%= book.note %></p>
+    <button id="edit-note-btn">✏️ Edit Note</button>
+  
+    <form id="note-edit-form" action="/book/<%= book.id %>/addNote" method="POST" style="display: none">
+      <textarea name="note" id="note-textarea"><%= book.note %></textarea>
+      <button type="submit">Save Note</button>
+    </form>
+  </div>
+  
+  <!-- Navigation Link -->
+  
+</div>
+
+<%- include("partials/footer") -%>
